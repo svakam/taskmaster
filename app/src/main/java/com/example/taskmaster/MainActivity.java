@@ -30,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        final Button allTasks = findViewById(R.id.allTasks);
+        // anonymous inner class
+        allTasks.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, AllTasks.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override

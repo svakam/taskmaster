@@ -5,4 +5,5 @@
     <string name="alltasks">All Tasks</string>
     <string name="addTaskHeader">Add a Task</string>
     <string name="addtitlelabel">Add Title</string>
+    <string name="addTaskSubmit">Submit!</string>
 </resources>

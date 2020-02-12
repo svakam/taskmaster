@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class AddTask extends AppCompatActivity {
@@ -23,7 +24,13 @@ public class AddTask extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText titleEditText = findViewById(R.id.editText);
                 final TextView declareSubmitted = findViewById(R.id.addTaskDecSubmit);
+                if (titleEditText.getText().length() == 0) {
+                    declareSubmitted.setText("Please enter a title.");
+                } else {
+                    declareSubmitted.setText("Submitted!");
+                }
                 declareSubmitted.setVisibility(View.VISIBLE);
             }
         });

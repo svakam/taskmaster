@@ -3,10 +3,15 @@ package com.example.taskmaster;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +45,48 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        
+        // redirect to gym task
+        TextView gym = findViewById(R.id.gymTitle);
+        gym.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView gym = findViewById(R.id.gymTitle);
+                Intent i = new Intent(MainActivity.this, TaskDetail.class).putExtra("task", gym.getText().toString());
+                startActivity(i);
+            }
+        });
+
+        // redirect to guitar task
+        TextView playGuitar = findViewById(R.id.guitarTitle);
+        playGuitar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView guitar = findViewById(R.id.guitarTitle);
+                Intent i = new Intent(MainActivity.this, TaskDetail.class).putExtra("task", guitar.getText().toString());
+                startActivity(i);
+            }
+        });
+
+        // redirect to run task
+        TextView run = findViewById(R.id.runTitle);
+        run.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView run = findViewById(R.id.gymTitle);
+                Intent i = new Intent(MainActivity.this, TaskDetail.class).putExtra("task", run.getText().toString());
+                startActivity(i);
+            }
+        });
+
+        // redirect to settings
+        ImageView settings = findViewById(R.id.settingsLogo);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, TaskSettings.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -53,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i(TAG, "resumed");
+
+
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        
     }
 
     @Override

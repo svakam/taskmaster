@@ -6,4 +6,7 @@
     <string name="addTaskHeader">Add a Task</string>
     <string name="addtitlelabel">Add Title</string>
     <string name="addTaskSubmit">Submit!</string>
+    <string name="gym">Gym</string>
+    <string name="play_guitar">Play Guitar</string>
+    <string name="run">Run!</string>
 </resources>

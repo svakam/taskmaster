@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         run.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView run = findViewById(R.id.gymTitle);
+                TextView run = findViewById(R.id.runTitle);
                 Intent i = new Intent(MainActivity.this, TaskDetail.class).putExtra("task", run.getText().toString());
                 startActivity(i);
             }
@@ -100,10 +100,13 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.i(TAG, "resumed");
 
-
+        TextView mainHeader = findViewById(R.id.mainHeader);
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        
+        String username = sharedPreferences.getString("username", "") + " Tasks";
+        mainHeader.setText(username);
+        Log.i(TAG, username);
+
     }
 
     @Override

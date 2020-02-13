@@ -45,38 +45,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // redirect to gym task
-        TextView gym = findViewById(R.id.gymTitle);
-        gym.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView gym = findViewById(R.id.gymTitle);
-                Intent i = new Intent(MainActivity.this, TaskDetail.class).putExtra("task", gym.getText().toString());
-                startActivity(i);
-            }
-        });
-
-        // redirect to guitar task
-        TextView playGuitar = findViewById(R.id.guitarTitle);
-        playGuitar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView guitar = findViewById(R.id.guitarTitle);
-                Intent i = new Intent(MainActivity.this, TaskDetail.class).putExtra("task", guitar.getText().toString());
-                startActivity(i);
-            }
-        });
-
-        // redirect to run task
-        TextView run = findViewById(R.id.runTitle);
-        run.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView run = findViewById(R.id.runTitle);
-                Intent i = new Intent(MainActivity.this, TaskDetail.class).putExtra("task", run.getText().toString());
-                startActivity(i);
-            }
-        });
+//        // redirect to gym task
+//        TextView gym = findViewById(R.id.gymTitle);
+//        gym.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                TextView gym = findViewById(R.id.gymTitle);
+//                Intent i = new Intent(MainActivity.this, TaskDetail.class).putExtra("task", gym.getText().toString());
+//                startActivity(i);
+//            }
+//        });
+//
+//        // redirect to guitar task
+//        TextView playGuitar = findViewById(R.id.guitarTitle);
+//        playGuitar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                TextView guitar = findViewById(R.id.guitarTitle);
+//                Intent i = new Intent(MainActivity.this, TaskDetail.class).putExtra("task", guitar.getText().toString());
+//                startActivity(i);
+//            }
+//        });
+//
+//        // redirect to run task
+//        TextView run = findViewById(R.id.runTitle);
+//        run.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                TextView run = findViewById(R.id.runTitle);
+//                Intent i = new Intent(MainActivity.this, TaskDetail.class).putExtra("task", run.getText().toString());
+//                startActivity(i);
+//            }
+//        });
 
         // redirect to settings
         ImageView settings = findViewById(R.id.settingsLogo);

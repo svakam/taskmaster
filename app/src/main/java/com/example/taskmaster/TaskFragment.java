@@ -72,12 +72,8 @@ public class TaskFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            List<Task> listOfTasks = new ArrayList<>();
-            listOfTasks.add(new Task("Gym", "Go to gym tomorrow morning", "Incomplete"));
-            listOfTasks.add(new Task("Play guitar", "Play some Van Halen", "In progress"));
-            listOfTasks.add(new Task("Run", "Get some cardio", "Never going to do it"));
 
-            recyclerView.setAdapter(new MyTaskRecyclerViewAdapter(listOfTasks, null));
+//            recyclerView.setAdapter(new MyTaskRecyclerViewAdapter(listOfTasks, null));
         }
         return view;
     }

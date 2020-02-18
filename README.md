@@ -9,10 +9,12 @@ This Android app implements CRUD functionality for managing a user's tasks. User
 - ![AllTasks](/screenshots/alltasks2132020.jpg)
 - ![AddTask](/screenshots/addtask2132020.jpg)
 - ![Settings](/screenshots/settings2132020.jpg)
+- ![MainRecycler}(/screenshots/main2182020.jpg)
 
 ## Change Log
 - 2/11/20: Implemented Activities for Home, Task Details, and Add Tasks, Intents to switch between these Activities
 - 2/12/20: Added Settings page for user to change his/her username via SharedPreferences, added ability to view specific task details upon tapping a task item from Home
 - 2/13/20: Added RecyclerView to main page to show all tasks
-- 2/14/20:
+- 2/18/20: Can click out from RecyclerView tasks to task details
+- 2/19/20: 
 

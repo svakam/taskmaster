@@ -2,6 +2,8 @@ package com.example.taskmaster;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,10 +25,12 @@ public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecycl
     static final String TAG = "va.ViewAdapter";
     private final List<Task> mValues;
     private final OnListFragmentInteractionListener mListener;
+    private final Context mContext;
 
-    public MyTaskRecyclerViewAdapter(List<Task> items, OnListFragmentInteractionListener listener) {
+    public MyTaskRecyclerViewAdapter(List<Task> items, OnListFragmentInteractionListener listener, Context context) {
         mValues = items;
         mListener = listener;
+        mContext = context;
     }
 
     // creates new row
@@ -36,10 +40,9 @@ public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecycl
                 .inflate(R.layout.fragment_task, parent, false);
         return new ViewHolder(view);
     }
-
     // given holder and position index, fill in that view with right data for that position
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
         holder.mTitleView.setText("" + mValues.get(position).getTitle());
         holder.mBodyView.setText("" + mValues.get(position).getBody());
@@ -49,6 +52,11 @@ public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecycl
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "clicked");
+                Intent i = new Intent(v.getContext(), TaskDetail.class);
+                i.putExtra("task", mValues.get(position).getTitle());
+                i.putExtra("body", mValues.get(position).getBody());
+                i.putExtra("state", mValues.get(position).getState());
+                v.getContext().startActivity(i);
             }
         });
     }

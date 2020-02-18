@@ -72,7 +72,7 @@
         android:contentDescription="@string/imagemainmain" />
 
     <fragment
-        android:id="@+id/fragment"
+        android:id="@+id/mainfragment"
         android:name="com.example.taskmaster.TaskFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"

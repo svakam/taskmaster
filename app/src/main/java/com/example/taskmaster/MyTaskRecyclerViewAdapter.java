@@ -53,9 +53,9 @@ public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecycl
             public void onClick(View v) {
                 Log.i(TAG, "clicked");
                 Intent i = new Intent(v.getContext(), TaskDetail.class);
-                i.putExtra("task", mValues.get(position).getTitle());
-                i.putExtra("body", mValues.get(position).getBody());
-                i.putExtra("state", mValues.get(position).getState());
+                i.putExtra("task", holder.mItem.getTitle());
+                i.putExtra("body", holder.mItem.getBody());
+                i.putExtra("state", holder.mItem.getState());
                 v.getContext().startActivity(i);
             }
         });

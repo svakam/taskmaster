@@ -3,6 +3,7 @@ package com.example.taskmaster;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,6 +32,22 @@ public class MainActivity extends AppCompatActivity {
         // setup work
         // logging: verbose, debug, info, warning, error, wtf
         Log.w(TAG, "we are in onCreate");
+
+        // database
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "task")
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
+
+        UserDao dao = db.userDao();
+        Task newTask = new Task("Gym", "Hit the gym by 6!", "done");
+        Task newTask2 = new Task("Guitar", "Play some Van Halen", "in progress");
+        dao.addTask(newTask2);
+        dao.addTask(newTask);
+        List<Task> listOfTasks = dao.getAll();
+        Log.i(TAG, listOfTasks.toString());
+
         final Button addTask = findViewById(R.id.addTask);
         // anonymous inner class: define a class that implements View.OnClickListener, right here inline
         addTask.setOnClickListener(new View.OnClickListener() {
@@ -56,10 +73,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        List<Task> listOfTasks = new LinkedList<>();
-        listOfTasks.add(new Task("Gym", "Go to gym tomorrow morning", "Incomplete"));
-        listOfTasks.add(new Task("Play guitar", "Play some Van Halen", "In progress"));
-        listOfTasks.add(new Task("Run", "Get some cardio", "Never going to do it"));
 
         MyTaskRecyclerViewAdapter adapter = new MyTaskRecyclerViewAdapter(listOfTasks, null, this);
         recyclerView.setAdapter(adapter);
@@ -91,8 +104,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String username = sharedPreferences.getString("username", "") + " Tasks";
         mainHeader.setText(username);
-        Log.i(TAG, username);
-
     }
 
     @Override

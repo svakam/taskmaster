@@ -104,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String username = sharedPreferences.getString("username", "") + " Tasks";
         mainHeader.setText(username);
+
+
     }
 
     @Override

@@ -16,4 +16,6 @@
     <string name="save_preferences">Save Preferences</string>
     <string name="edit_username">Edit username</string>
     <string name="imagemainmain">imagemainmain</string>
+    <string name="submitted">Submitted!</string>
+    <string name="add_body">Add Body</string>
 </resources>

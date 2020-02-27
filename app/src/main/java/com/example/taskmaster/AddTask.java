@@ -32,6 +32,7 @@ public class AddTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
 
+        // set up AWS in Java code - AppSyncClient to communicate with AWS
         mAWSAppSyncClient = AWSAppSyncClient.builder()
                 .context(getApplicationContext())
                 .awsConfiguration(new AWSConfiguration(getApplicationContext()))
@@ -77,7 +78,7 @@ public class AddTask extends AppCompatActivity {
 
                     @Override
                     public void onFailure(@Nonnull ApolloException e) {
-                        Log.i(TAGADD, "failure");
+                            Log.i(TAGADD, "failure");
                     }
                 });
     }

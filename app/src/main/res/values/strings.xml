@@ -18,4 +18,5 @@
     <string name="imagemainmain">imagemainmain</string>
     <string name="submitted">Submitted!</string>
     <string name="add_body">Add Body</string>
+    <string name="add_state_label">Add State</string>
 </resources>
